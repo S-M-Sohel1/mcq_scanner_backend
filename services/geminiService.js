@@ -11,9 +11,12 @@ class GeminiService {
       console.log(`GeminiService: API Key loaded. Length: ${this.apiKey.length}, First 4 chars: ${this.apiKey.substring(0, 4)}`);
     }
     
+    // Get model name from environment variable, fallback to gemini-2.5-flash
+    const modelName = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+    console.log(`GeminiService: Using model: ${modelName}`);
+    
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    // Using gemini-2.5-flash - confirmed available via API
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    this.model = this.genAI.getGenerativeModel({ model: modelName });
   }
 
   async analyzeImage(imagePath) {

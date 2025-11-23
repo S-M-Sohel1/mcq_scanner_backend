@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Scanner Backend API</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .version {
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+        .status {
+            background: #10b981;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .endpoint {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .endpoint h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .method {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .url {
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+            word-break: break-all;
+            font-size: 0.9em;
+        }
+        .description {
+            color: #666;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 0.85em;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 MCQ Scanner Backend</h1>
+        <p class="version">Version 1.0.0</p>
+        <div class="status">✅ API is Running</div>
+        
+        <div class="endpoint">
+            <h3>Analyze MCQ Sheet</h3>
+            <div class="method">POST</div>
+            <div class="url">/api/analyze-sheet</div>
+            <p class="description">
+                Upload an MCQ answer sheet image to analyze selected answers.
+                Send as multipart/form-data with field name: <code>image</code>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Powered by Gemini AI • Deployed on Vercel</p>
+            <p><a href="https://github.com/S-M-Sohel1/mcq_scanner_backend" target="_blank">View on GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>

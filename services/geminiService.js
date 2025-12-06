@@ -33,14 +33,16 @@ class GeminiService {
         mimeType = 'image/gif';
       }
 
-      const prompt = 
-        "Analyze this image of an MCQ (Multiple Choice Question) sheet. " +
-        "Identify the question numbers and the selected option(s) for each. " +
-        "Return the result strictly as a JSON object where keys are question numbers (e.g., '1', '2') " +
-        "and values are the selected options (e.g., 'A', 'B', 'C', 'D'). " +
-        "If a question is not answered, use null. " +
-        "If multiple options are marked for a single question, return them as an array (e.g., ['A', 'C']). " +
-        "Do not include any markdown formatting or explanations, just the raw JSON.";
+const prompt = 
+  "Analyze the provided image of an MCQ (Multiple Choice Question) answer sheet. " +
+  "Detect all question numbers and determine which option(s) are filled for each question. " +
+  "Return ONLY a raw JSON object (no markdown, no explanation, no extra text). " +
+  "Use question numbers as keys (e.g., '1', '2'). " +
+  "Set the value to a single option ('A', 'B', 'C', 'D') if exactly one bubble is filled. " +
+  "Use null if the question has no filled option. " +
+  "If multiple bubbles appear filled for the same question, return them as an array (e.g., ['A', 'C']). " +
+  "Ensure the JSON is strictly valid and contains no additional fields.";
+
 
       const imagePart = {
         inlineData: {
